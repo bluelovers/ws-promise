@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/bluelovers/ws-promise/compare/bluebird-allsettled@1.0.1...bluebird-allsettled@1.0.2) (2020-05-05)
+
+
+### Bug Fixes
+
+* profilly ([7793bfe](https://github.com/bluelovers/ws-promise/commit/7793bfe43448014753d511892898bd40faa6ee1f))
+
+
+
+
+
 ## 1.0.1 (2020-05-05)
 
 
