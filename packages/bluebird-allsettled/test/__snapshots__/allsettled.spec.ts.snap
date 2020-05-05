@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`allSettled 1`] = `
+Array [
+  Object {
+    "status": "fulfilled",
+    "value": "juan",
+  },
+  Object {
+    "reason": "valentina",
+    "status": "rejected",
+  },
+  Object {
+    "status": "fulfilled",
+    "value": "julian",
+  },
+]
+`;
