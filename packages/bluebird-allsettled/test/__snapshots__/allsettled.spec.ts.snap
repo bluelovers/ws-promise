@@ -16,3 +16,20 @@ Array [
   },
 ]
 `;
+
+exports[`allSettled:Bluebird36 1`] = `
+Array [
+  Object {
+    "status": "fulfilled",
+    "value": "juan",
+  },
+  Object {
+    "reason": "valentina",
+    "status": "rejected",
+  },
+  Object {
+    "status": "fulfilled",
+    "value": "julian",
+  },
+]
+`;

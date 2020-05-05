@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import { supportAllSettled } from './supportAllSettled';
 import { ITSPromiseSettledResult } from 'ts-type';
 
-const cache = new WeakMap<typeof Bluebird, <R>(values: PromiseLike<R>[]) => Bluebird<Bluebird.Inspection<R>>[]>()
+const cache = new WeakMap<typeof Bluebird, <R>(values: PromiseLike<R>[]) => Bluebird<Bluebird.Inspection<R>[]>>()
 
 export function profillyBluebirdInspection(lib: typeof Bluebird)
 {
@@ -13,7 +13,7 @@ export function profillyBluebirdInspection(lib: typeof Bluebird)
 
 	if (!cache.has(lib))
 	{
-		const fn = <R>(values: PromiseLike<R>[]) => values.map(promise =>
+		const fn = <R>(values: PromiseLike<R>[]) => lib.all(values.map((promise) =>
 		{
 			if (lib.is(promise))
 			{
@@ -21,7 +21,7 @@ export function profillyBluebirdInspection(lib: typeof Bluebird)
 			}
 
 			throw new TypeError(`promise not a PromiseLike, ${promise}`)
-		})
+		}))
 
 		cache.set(lib, fn)
 	}
