@@ -4,7 +4,7 @@ import { ITSPromiseSettledResult } from 'ts-type';
 
 const cache = new WeakMap<typeof Bluebird, <R>(values: PromiseLike<R>[]) => Bluebird<Bluebird.Inspection<R>[]>>()
 
-export function profillyBluebirdInspection(lib: typeof Bluebird)
+export function profillyBluebirdInspection(lib: typeof Bluebird): (<R>(values: PromiseLike<R>[]) => Bluebird<Bluebird.Inspection<R>[]>) | (<R>(values: PromiseLike<R>[]) => Bluebird<ITSPromiseSettledResult<R>[]>)
 {
 	if (supportAllSettled(lib))
 	{

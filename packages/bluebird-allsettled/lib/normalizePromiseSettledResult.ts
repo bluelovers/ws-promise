@@ -5,7 +5,7 @@
 import Bluebird from 'bluebird';
 import { ITSPromiseFulfilledResult, ITSPromiseRejectedResult } from 'ts-type';
 
-export function normalizePromiseSettledResult<R>(promise: Bluebird<R>)
+export function normalizePromiseSettledResult<R>(promise: Bluebird<R>): ITSPromiseRejectedResult<any> | ITSPromiseFulfilledResult<R>
 {
 	if (promise.isFulfilled?.())
 	{
