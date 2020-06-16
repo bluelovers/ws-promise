@@ -3,5 +3,5 @@
  */
 import Bluebird from 'bluebird';
 import { ITSPromiseFulfilledResult, ITSPromiseRejectedResult } from 'ts-type';
-export declare function normalizePromiseSettledResult<R>(promise: Bluebird<R>): ITSPromiseFulfilledResult<R> | ITSPromiseRejectedResult<any>;
+export declare function normalizePromiseSettledResult<R>(promise: Bluebird<R>): ITSPromiseRejectedResult<any> | ITSPromiseFulfilledResult<R>;
 export default normalizePromiseSettledResult;
