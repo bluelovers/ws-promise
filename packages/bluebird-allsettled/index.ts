@@ -10,7 +10,7 @@ export function allSettled<R>(values: PromiseLike<R>[], options?: {
 {
 	// @ts-ignore
 	return profillyBluebirdInspection(options?.promise ?? Bluebird)(values)
-		.map(promise => normalizePromiseSettledResult(promise))
+		.map(promise => normalizePromiseSettledResult(promise as any))
 	;
 }
 

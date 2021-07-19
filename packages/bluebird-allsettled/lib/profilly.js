@@ -4,7 +4,7 @@ exports.profillyBluebirdInspection = void 0;
 const supportAllSettled_1 = require("./supportAllSettled");
 const cache = new WeakMap();
 function profillyBluebirdInspection(lib) {
-    if (supportAllSettled_1.supportAllSettled(lib)) {
+    if ((0, supportAllSettled_1.supportAllSettled)(lib)) {
         return lib.allSettled;
     }
     if (!cache.has(lib)) {

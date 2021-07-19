@@ -17,6 +17,7 @@ function normalizePromiseSettledResult(promise) {
         return {
             status: "rejected",
             reason: promise.reason(),
+            //value: void 0 as never,
         };
     }
     throw new TypeError(`promise not a Bluebird.Inspection, ${promise}`);
