@@ -1,6 +1,6 @@
 {
   "name": "bluebird-allsettled",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "turn Bluebird.allSettled to Promise.allSettled",
   "homepage": "https://github.com/bluelovers/ws-promise/tree/master/packages/bluebird-allsettled#readme",
   "bugs": {
@@ -30,8 +30,8 @@
     "tsc:esm": "tsc -p tsconfig.esm.json"
   },
   "dependencies": {
-    "tslib": "^2.3.1",
-    "ts-type": "^2.1.4"
+    "ts-type": "^2.1.4",
+    "tslib": "^2.3.1"
   },
   "peerDependencies": {
     "bluebird": "^3.7.2"

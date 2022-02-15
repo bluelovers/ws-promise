@@ -1,6 +1,6 @@
 {
   "name": "bluebird-cancellation",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/bluelovers/ws-promise/tree/master/packages/bluebird-cancellation#readme",
@@ -23,8 +23,8 @@
     "sort-package-json": "ynpx --quiet yarn-tool -- sort"
   },
   "dependencies": {
-    "tslib": "^2.3.1",
-    "@types/bluebird": "*"
+    "@types/bluebird": "*",
+    "tslib": "^2.3.1"
   },
   "peerDependencies": {
     "bluebird": "^3.7.2"
