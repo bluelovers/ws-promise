@@ -1,0 +1,8 @@
+{
+  "extends": "@bluelovers/tsconfig/tsdx/index.json",
+  "compilerOptions": {
+    "importHelpers": false,
+    "noUnusedParameters": false,
+    "noImplicitAny": false
+  }
+}
