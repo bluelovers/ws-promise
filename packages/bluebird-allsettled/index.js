@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.allSettled = void 0;
 const tslib_1 = require("tslib");
 ///<reference lib="es2020" />
-const bluebird_1 = (0, tslib_1.__importDefault)(require("bluebird"));
+const bluebird_1 = tslib_1.__importDefault(require("bluebird"));
 const normalizePromiseSettledResult_1 = require("./lib/normalizePromiseSettledResult");
 const profilly_1 = require("./lib/profilly");
 function allSettled(values, options) {
