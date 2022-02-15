@@ -28,9 +28,13 @@ function promiseTapThenCatch(promise, handlerThen, handlerCatch) {
 
   return promise;
 }
+function promiseTapLazy(promise, handler) {
+  return promiseTapThenCatch(promise, handler, handler);
+}
 
-exports["default"] = promiseTapThenCatch;
+exports["default"] = promiseTapLazy;
 exports.promiseTapCatch = promiseTapCatch;
+exports.promiseTapLazy = promiseTapLazy;
 exports.promiseTapThen = promiseTapThen;
 exports.promiseTapThenCatch = promiseTapThenCatch;
 //# sourceMappingURL=index.cjs.development.cjs.map

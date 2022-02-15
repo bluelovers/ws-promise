@@ -24,6 +24,9 @@ function promiseTapThenCatch(promise, handlerThen, handlerCatch) {
 
   return promise;
 }
+function promiseTapLazy(promise, handler) {
+  return promiseTapThenCatch(promise, handler, handler);
+}
 
-export { promiseTapThenCatch as default, promiseTapCatch, promiseTapThen, promiseTapThenCatch };
+export { promiseTapLazy as default, promiseTapCatch, promiseTapLazy, promiseTapThen, promiseTapThenCatch };
 //# sourceMappingURL=index.esm.mjs.map
