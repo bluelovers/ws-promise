@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/bluelovers/ws-promise/compare/promise-tap-then-catch@1.0.2...promise-tap-then-catch@1.0.3) (2022-03-28)
+
+
+### 📦　Code Refactoring
+
+* code splitting ([cb866ec](https://github.com/bluelovers/ws-promise/commit/cb866ecab57663301de3d84da614a1fb8afe2ee0))
+
+
+
+
+
 ## [1.0.2](https://github.com/bluelovers/ws-promise/compare/promise-tap-then-catch@1.0.1...promise-tap-then-catch@1.0.2) (2022-02-15)
 
 

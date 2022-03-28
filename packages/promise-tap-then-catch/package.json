@@ -1,6 +1,6 @@
 {
   "name": "promise-tap-then-catch",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tap into a promise chain without affecting its value or state",
   "keywords": [
     "create-by-yarn-tool",
