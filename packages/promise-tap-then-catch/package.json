@@ -1,7 +1,7 @@
 {
   "name": "promise-tap-then-catch",
   "version": "1.0.2",
-  "description": "",
+  "description": "Tap into a promise chain without affecting its value or state",
   "keywords": [
     "create-by-yarn-tool",
     "create-by-tsdx"
@@ -25,7 +25,7 @@
     "./package.json": "./package.json"
   },
   "main": "dist/index.cjs",
-  "unpkg": "dist/index.umd.js",
+  "unpkg": "dist/index.umd.production.min.cjs",
   "module": "dist/index.esm.mjs",
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",

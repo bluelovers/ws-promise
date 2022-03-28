@@ -2,14 +2,14 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function promiseTapThen(promise, handler) {
-  return promise.then(async (value, ...argv) => {
+function _tapHandler(handler) {
+  return async (value, ...argv) => {
     await handler(value, ...argv);
     return value;
-  });
+  };
 }
-function promiseTapCatch(promise, ...inputs) {
-  return promise.catch(async (value, ...argv) => {
+function _tapCatchHandler(...inputs) {
+  return async (value, ...argv) => {
     const handler = inputs.pop();
 
     if (!inputs.length || inputs.some(ec => value instanceof ec)) {
@@ -17,7 +17,13 @@ function promiseTapCatch(promise, ...inputs) {
     }
 
     return Promise.reject(value);
-  });
+  };
+}
+function promiseTapThen(promise, handler) {
+  return promise.then(_tapHandler(handler));
+}
+function promiseTapCatch(promise, ...inputs) {
+  return promise.catch(_tapCatchHandler(...inputs));
 }
 function promiseTapThenCatch(promise, handlerThen, handlerCatch) {
   promise = promiseTapThen(promise, handlerThen);
@@ -28,13 +34,15 @@ function promiseTapThenCatch(promise, handlerThen, handlerCatch) {
 
   return promise;
 }
-function promiseTapLazy(promise, handler) {
-  return promiseTapThenCatch(promise, handler, handler);
+function promiseTapLazyBoth(promise, handlerThen, handlerCatch) {
+  return promiseTapThenCatch(promise, handlerThen, handlerCatch !== null && handlerCatch !== void 0 ? handlerCatch : handlerThen);
 }
 
-exports["default"] = promiseTapLazy;
+exports._tapCatchHandler = _tapCatchHandler;
+exports._tapHandler = _tapHandler;
+exports["default"] = promiseTapLazyBoth;
 exports.promiseTapCatch = promiseTapCatch;
-exports.promiseTapLazy = promiseTapLazy;
+exports.promiseTapLazyBoth = promiseTapLazyBoth;
 exports.promiseTapThen = promiseTapThen;
 exports.promiseTapThenCatch = promiseTapThenCatch;
 //# sourceMappingURL=index.cjs.development.cjs.map
