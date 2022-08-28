@@ -1,37 +1,28 @@
-function _tapHandler(handler) {
-  return async (value, ...argv) => {
-    await handler(value, ...argv);
-    return value;
+function _tapHandler(a) {
+  return async (t, ...e) => (await a(t, ...e), t);
+}
+
+function _tapCatchHandler(...a) {
+  return async (t, ...e) => {
+    const n = a.pop();
+    return a.length && !a.some((a => t instanceof a)) || await n(t, ...e), Promise.reject(t);
   };
 }
-function _tapCatchHandler(...inputs) {
-  return async (value, ...argv) => {
-    const handler = inputs.pop();
 
-    if (!inputs.length || inputs.some(ec => value instanceof ec)) {
-      await handler(value, ...argv);
-    }
+function promiseTapThen(a, t) {
+  return a.then(_tapHandler(t));
+}
 
-    return Promise.reject(value);
-  };
+function promiseTapCatch(a, ...t) {
+  return a.catch(_tapCatchHandler(...t));
 }
-function promiseTapThen(promise, handler) {
-  return promise.then(_tapHandler(handler));
-}
-function promiseTapCatch(promise, ...inputs) {
-  return promise.catch(_tapCatchHandler(...inputs));
-}
-function promiseTapThenCatch(promise, handlerThen, handlerCatch) {
-  promise = promiseTapThen(promise, handlerThen);
 
-  if (typeof handlerCatch !== 'undefined') {
-    return promiseTapCatch(promise, handlerCatch);
-  }
-
-  return promise;
+function promiseTapThenCatch(a, t, e) {
+  return a = promiseTapThen(a, t), void 0 !== e ? promiseTapCatch(a, e) : a;
 }
-function promiseTapLazyBoth(promise, handlerThen, handlerCatch) {
-  return promiseTapThenCatch(promise, handlerThen, handlerCatch !== null && handlerCatch !== void 0 ? handlerCatch : handlerThen);
+
+function promiseTapLazyBoth(a, t, e) {
+  return promiseTapThenCatch(a, t, null != e ? e : t);
 }
 
 export { _tapCatchHandler, _tapHandler, promiseTapLazyBoth as default, promiseTapCatch, promiseTapLazyBoth, promiseTapThen, promiseTapThenCatch };

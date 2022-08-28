@@ -2,33 +2,79 @@
   "name": "ws-promise",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://github.com/bluelovers/ws-promise#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/ws-promise/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/ws-promise.git"
+  },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
-    "lerna:publish:yes": "yarn run prepublishOnly && lerna publish --yes --cd-version patch",
-    "prepublishOnly": "yarn run prepublishOnly:check-bin",
+    "review:all": "yarn-tool ws run review --concurrency 1",
+    "coverage:all": "yarn-tool ws run coverage --concurrency 1",
+    "lint:all": "yarn-tool ws run lint --concurrency 1",
+    "pretest": "echo pretest",
+    "test": "yarn run test:since",
+    "test:all": "yarn-tool ws run test --concurrency 1",
+    "test:jest:clearCache": "jest --clearCache",
+    "test:since": "yarn run test:all -- --since",
+    "test:snapshot:all": "yarn-tool ws run test:snapshot --concurrency 1",
+    "test:snapshot:since": "yarn run test:snapshot:all -- --since",
+    "install:frozenLockfile": "yarn-tool install --frozen-lockfile",
+    "install:reset-lockfile": "yarn-tool install --reset-lockfile",
+    "install:resetLockfile": "yarn-tool install --reset-lockfile",
+    "build:all": "yarn-tool ws run build --concurrency 1",
+    "ci:install": "yarn install --frozen-lockfile && yarn add -W typescript@next jest ts-jest ts-node ynpx lerna yarn-tool",
+    "ci:build": "echo ci:build",
+    "lerna:publish": "yarn run prepublishOnly:root && lerna publish && yarn run postpublishOnly",
+    "lerna:publish:yes": "yarn run prepublishOnly:root && lerna publish --yes --bump patch && yarn run postpublishOnly",
+    "ws:fix-all": "yarn-tool fix-all  --overwriteHostedGitInfo",
+    "preversion": "yarn run test",
+    "version": "echo version",
+    "postversion": "yarn-tool fix-all",
+    "prepublish": "echo prepublish",
+    "prepare": "echo prepare",
+    "prepare:fix-ws-links": "ynpx --quiet @yarn-tool/fix-ws-links",
+    "prepublishOnly": "echo prepublishOnly",
     "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
     "prepublishOnly:lockfile": "ynpx --quiet sync-lockfile",
-    "ncu": "yarn-tool ncu -u && yarn-tool ws exec yarn-tool ncu -- -u",
-    "sort-package-json": "yarn-tool sort && yarn-tool ws exec yarn-tool sort"
+    "prepublishOnly:root": "yarn run prepublishOnly:check-bin && yarn run prepare:fix-ws-links",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "prepack": "echo prepack",
+    "pack": "echo pack",
+    "postpack": "echo postpack",
+    "publish": "echo publish",
+    "postpublish": "echo postpublish",
+    "postpublishOnly": "yarn run postpublishOnly:ws-root-changelog & echo postpublishOnly",
+    "postpublishOnly:ws-root-changelog": "ynpx ws-root-changelog & git add ./CHANGELOG.md & git commit ./CHANGELOG.md -m \"chore(changelog): update changelog toc in workspaces root\" & echo update changelog toc in workspaces root",
+    "ncu": "yarn run ncu:ws",
+    "ncu:ws": "yarn-tool ncu -u --AA",
+    "ncu:root": "yarn-tool ncu -u",
+    "sort-package-json": "yarn run sort-package-json:root && yarn run sort-package-json:ws",
+    "sort-package-json:root": "yarn-tool sort",
+    "sort-package-json:ws": "yarn-tool ws sort",
+    "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "resolutions": {},
   "dependencies": {
     "bluebird": "^3.7.2",
     "bluebird36": "npm:bluebird@< 3.7.0 >= 3.6.0",
-    "tslib": "^2.3.1"
+    "tslib": "^2"
   },
   "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.28",
+    "@bluelovers/tsconfig": "^1.0.30",
     "@types/bluebird": "^3.5.36",
-    "@types/jest": "^27.4.1",
+    "@types/jest": "^28.1.8",
     "@types/node": "*",
-    "jest": "^27.5.1",
-    "ts-jest": "^27.1.4"
+    "@yarn-tool/ws-find-up-paths": "*",
+    "jest": "^29.0.1",
+    "ts-jest": "^28.0.8"
   },
   "peerDependencies": {
-    "lerna": "^4"
+    "lerna": "^5"
   }
 }
