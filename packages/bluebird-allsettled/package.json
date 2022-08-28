@@ -1,6 +1,6 @@
 {
   "name": "bluebird-allsettled",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "turn Bluebird.allSettled to Promise.allSettled",
   "homepage": "https://github.com/bluelovers/ws-promise/tree/master/packages/bluebird-allsettled#readme",
   "bugs": {

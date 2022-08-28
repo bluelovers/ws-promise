@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.6](https://github.com/bluelovers/ws-promise/compare/bluebird-allsettled@1.0.5...bluebird-allsettled@1.0.6) (2022-08-28)
+
+
+
+### 🛠　Build System
+
+* update configuration ([c5109f2](https://github.com/bluelovers/ws-promise/commit/c5109f2bb20806159185439b3264adae21425b73))
+
+
+
 ## [1.0.5](https://github.com/bluelovers/ws-promise/compare/bluebird-allsettled@1.0.4...bluebird-allsettled@1.0.5) (2022-03-28)
 
 

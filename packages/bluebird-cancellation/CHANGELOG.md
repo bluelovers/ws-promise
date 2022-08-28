@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.16](https://github.com/bluelovers/ws-promise/compare/bluebird-cancellation@1.0.15...bluebird-cancellation@1.0.16) (2022-08-28)
+
+
+
+### 🛠　Build System
+
+* update configuration ([c5109f2](https://github.com/bluelovers/ws-promise/commit/c5109f2bb20806159185439b3264adae21425b73))
+
+
+
 ## [1.0.15](https://github.com/bluelovers/ws-promise/compare/bluebird-cancellation@1.0.14...bluebird-cancellation@1.0.15) (2022-02-15)
 
 
