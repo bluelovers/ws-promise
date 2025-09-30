@@ -3,6 +3,7 @@
   "compilerOptions": {
     "importHelpers": false,
     "noUnusedParameters": false,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "ignoreDeprecations": "6.0"
   }
 }

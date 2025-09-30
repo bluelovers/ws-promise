@@ -15,8 +15,11 @@
   ],
   "scripts": {
     "review:all": "yarn-tool ws run review --concurrency 1",
+    "review:since": "yarn run review:all -- --since",
     "coverage:all": "yarn-tool ws run coverage --concurrency 1",
+    "coverage:since": "yarn run coverage:all -- --since",
     "lint:all": "yarn-tool ws run lint --concurrency 1",
+    "lint:since": "yarn run lint:all -- --since",
     "pretest": "echo pretest",
     "test": "yarn run test:since",
     "test:all": "yarn-tool ws run test --concurrency 1",
@@ -24,15 +27,19 @@
     "test:since": "yarn run test:all -- --since",
     "test:snapshot:all": "yarn-tool ws run test:snapshot --concurrency 1",
     "test:snapshot:since": "yarn run test:snapshot:all -- --since",
+    "test:tsd:all": "yarn-tool ws run test:tsd --concurrency 1",
+    "test:tsd:since": "yarn run test:tsd:all -- --since",
     "install:frozenLockfile": "yarn-tool install --frozen-lockfile",
     "install:reset-lockfile": "yarn-tool install --reset-lockfile",
     "install:resetLockfile": "yarn-tool install --reset-lockfile",
     "build:all": "yarn-tool ws run build --concurrency 1",
+    "build:since": "yarn run build:all -- --since",
     "ci:install": "yarn install --frozen-lockfile && yarn add -W typescript@next jest ts-jest ts-node ynpx lerna yarn-tool",
     "ci:build": "echo ci:build",
     "lerna:publish": "yarn run prepublishOnly:root && lerna publish && yarn run postpublishOnly",
     "lerna:publish:yes": "yarn run prepublishOnly:root && lerna publish --yes --bump patch && yarn run postpublishOnly",
     "ws:fix-all": "yarn-tool fix-all  --overwriteHostedGitInfo",
+    "ws:fix-all:resetStaticFiles": "yarn run ws:fix-all -- --resetStaticFiles",
     "preversion": "yarn run test",
     "version": "echo version",
     "postversion": "yarn-tool fix-all",
@@ -63,18 +70,18 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "bluebird36": "npm:bluebird@< 3.7.0 >= 3.6.0",
-    "tslib": "^2"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.30",
-    "@types/bluebird": "^3.5.36",
-    "@types/jest": "^28.1.8",
-    "@types/node": "*",
-    "@yarn-tool/ws-find-up-paths": "*",
-    "jest": "^29.0.1",
-    "ts-jest": "^28.0.8"
+    "@bluelovers/tsconfig": "^1.0.35",
+    "@types/bluebird": "^3.5.42",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.6.0",
+    "@yarn-tool/ws-find-up-paths": "^1.0.14",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.4"
   },
   "peerDependencies": {
-    "lerna": "^5"
+    "lerna": "<6 >=5"
   }
 }
