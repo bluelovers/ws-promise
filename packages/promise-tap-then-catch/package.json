@@ -1,6 +1,6 @@
 {
   "name": "promise-tap-then-catch",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Tap into a promise chain without affecting its value or state",
   "keywords": [
     "create-by-yarn-tool",
@@ -72,6 +72,5 @@
     "sort-package-json": "yarn-tool sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "dependencies": {},
   "packageManager": "yarn@^1.22.11"
 }
