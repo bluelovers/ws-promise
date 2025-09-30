@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/bluelovers/ws-promise/compare/@bluelovers/promise-delay@1.0.2...@bluelovers/promise-delay@1.0.3) (2025-09-30)
+
+
+
+### 🐛　Bug Fixes
+
+* types ([5894fc3](https://github.com/bluelovers/ws-promise/commit/5894fc30d3c95a74b3e70f6bb3753d26487d77c4))
+
+
+
 ## [1.0.2](https://github.com/bluelovers/ws-promise/compare/@bluelovers/promise-delay@1.0.1...@bluelovers/promise-delay@1.0.2) (2025-09-30)
 
 
