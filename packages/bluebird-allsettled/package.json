@@ -19,6 +19,7 @@
     "lint": "npx eslint **/*.ts",
     "test": "yarn run test:jest",
     "test:jest": "jest --coverage",
+    "test:jest:coverage": "yarn run test:jest -- --coverage",
     "test:jest:snapshot": "yarn run test:jest -- -u",
     "test:mocha": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
     "test:snapshot": "yarn run test -- -u",
@@ -32,7 +33,8 @@
     "ncu": "npx yarn-tool ncu -u",
     "sort-package-json": "npx yarn-tool sort",
     "tsc:default": "tsc -p tsconfig.json",
-    "tsc:esm": "tsc -p tsconfig.esm.json"
+    "tsc:esm": "tsc -p tsconfig.esm.json",
+    "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
     "ts-type": "^3.0.1",
@@ -40,5 +42,6 @@
   },
   "peerDependencies": {
     "bluebird": "^3.7.2"
-  }
+  },
+  "gitHead": "0c12376195f852645ce273be3e4740ec7ed5ed04"
 }

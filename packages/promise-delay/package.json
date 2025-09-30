@@ -76,5 +76,9 @@
     "tsc:esm": "tsc -p tsconfig.esm.json",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@1.22.19",
+  "gitHead": "0c12376195f852645ce273be3e4740ec7ed5ed04",
+  "publishConfig": {
+    "access": "public"
+  }
 }
