@@ -1,4 +1,3 @@
-/// <reference lib="es2020" />
 import Bluebird from 'bluebird';
 import { ITSPromiseSettledResult } from 'ts-type';
 export declare function allSettled<R>(values: PromiseLike<R>[], options?: {

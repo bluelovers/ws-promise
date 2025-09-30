@@ -3,7 +3,7 @@
  * Created by user on 2020/5/6.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.normalizePromiseSettledResult = void 0;
+exports.normalizePromiseSettledResult = normalizePromiseSettledResult;
 function normalizePromiseSettledResult(promise) {
     var _a, _b;
     if ((_a = promise.isFulfilled) === null || _a === void 0 ? void 0 : _a.call(promise)) {
@@ -22,6 +22,5 @@ function normalizePromiseSettledResult(promise) {
     }
     throw new TypeError(`promise not a Bluebird.Inspection, ${promise}`);
 }
-exports.normalizePromiseSettledResult = normalizePromiseSettledResult;
 exports.default = normalizePromiseSettledResult;
 //# sourceMappingURL=normalizePromiseSettledResult.js.map

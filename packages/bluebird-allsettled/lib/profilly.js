@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.profillyBluebirdInspection = void 0;
+exports.profillyBluebirdInspection = profillyBluebirdInspection;
 const supportAllSettled_1 = require("./supportAllSettled");
 const cache = new WeakMap();
 function profillyBluebirdInspection(lib) {
@@ -19,5 +19,4 @@ function profillyBluebirdInspection(lib) {
     }
     return cache.get(lib);
 }
-exports.profillyBluebirdInspection = profillyBluebirdInspection;
 //# sourceMappingURL=profilly.js.map
