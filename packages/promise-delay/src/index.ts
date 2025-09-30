@@ -1,4 +1,4 @@
-export function promiseDelay<T>(ms: number, value: T)
+export function promiseDelay<T>(ms: number, value?: T)
 {
 	return new Promise<T>(function (resolve)
 	{
@@ -9,7 +9,7 @@ export function promiseDelay<T>(ms: number, value: T)
 	})
 }
 
-export function promiseDelayReject(ms: number, value: unknown)
+export function promiseDelayReject(ms: number, value?: unknown)
 {
 	return new Promise(function (_resolve, reject)
 	{
